@@ -46,6 +46,10 @@ const overlay = {
   exit: { backgroundColor: "rgba(0, 0, 0, 0)" },
 };
 
+const boxVariants = {
+  hover: { width: 350, height: 250 },
+};
+
 function App() {
   const [id, setId] = useState<null | string>(null);
   const [clicked, setClicked] = useState(false);
@@ -54,18 +58,30 @@ function App() {
   return (
     <Wrapper>
       <Grid>
-        <Box onClick={() => setId("1")} key={"1"} layoutId={"1"} />
-        <Box onClick={() => setId("2")} key={"2"} layoutId={"2"}>
+        <Box onClick={() => setId("1")} key={"1"} layoutId={"1"}           
+          variants={boxVariants}
+          whileHover="hover"
+        />
+        <Box onClick={() => setId("2")} key={"2"} layoutId={"2"}
+          variants={boxVariants}
+          whileHover="hover"
+        >
           {!clicked ? (
             <Circle layoutId="circle" style={{ borderRadius: 50 }} />
           ) : null}
         </Box>
-        <Box onClick={() => setId("3")} key={"3"} layoutId={"3"}>
+        <Box onClick={() => setId("3")} key={"3"} layoutId={"3"}
+          variants={boxVariants}
+          whileHover="hover"
+        >
           {clicked ? (
               <Circle layoutId="circle" style={{ borderRadius: 50 }} />
             ) : null}
         </Box>
-        <Box onClick={() => setId("4")} key={"4"} layoutId={"4"} />
+        <Box onClick={() => setId("4")} key={"4"} layoutId={"4"} 
+          variants={boxVariants}
+          whileHover="hover"
+        />
       </Grid>
       <AnimatePresence>
         {id ? (

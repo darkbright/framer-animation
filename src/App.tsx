@@ -12,18 +12,13 @@ const Wrapper = styled.div`
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   width: 50vw;
   gap: 10px;
-  div:first-child,
-  div:last-child {
-    grid-column: span 2;
-  }
 `;
 
 const Box = styled(motion.div)`
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 40px;
+  background-color: rgba(255, 170, 70, 1);
   height: 200px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
@@ -61,7 +56,7 @@ function App() {
             animate="visible"
             exit="exit"
           >
-            <Box layoutId={id} style={{ width: 400, height: 200 }} />
+            <Box layoutId={id} style={{ width: 300, height: 200 }} />
           </Overlay>
         ) : null}
       </AnimatePresence>

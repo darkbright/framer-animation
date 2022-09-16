@@ -68,11 +68,11 @@ function App() {
       <Grid>
         <Box onClick={() => setId("1")} key={"1"} layoutId={"1"}           
           variants={boxVariants}
-          whileHover="hover"
+          whileHover={{scale:1.3, originZ:0, originX:1, originY:1}}
         />
         <Box onClick={() => setId("2")} key={"2"} layoutId={"2"}
           variants={boxVariants}
-          whileHover="hover"
+          whileHover={{scale:1.3, originZ:0, originX:0, originY:1}}
         >
           {!clicked ? (
             <Circle layoutId="circle" style={{ borderRadius: 50 }} />
@@ -80,7 +80,7 @@ function App() {
         </Box>
         <Box onClick={() => setId("3")} key={"3"} layoutId={"3"}
           variants={boxVariants}
-          whileHover="hover"
+          whileHover={{scale:1.3, originZ:0, originX:1, originY:0}}
         >
           {clicked ? (
               <Circle layoutId="circle" style={{ borderRadius: 50 }} />
@@ -88,7 +88,7 @@ function App() {
         </Box>
         <Box onClick={() => setId("4")} key={"4"} layoutId={"4"} 
           variants={boxVariants}
-          whileHover="hover"
+          whileHover={{scale:1.3, originZ:1, originX:0, originY:0}}
         />
       </Grid>
       <AnimatePresence>

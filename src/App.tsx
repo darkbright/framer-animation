@@ -5,9 +5,10 @@ import { useState } from "react";
 const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
-  display: flex;
+  display: inline-grid;
   align-items: center;
   justify-content: center;
+  justify-items: center;
 `;
 
 const Grid = styled.div`
@@ -21,13 +22,15 @@ const Box = styled(motion.div)`
   background-color: rgba(255, 170, 70, 1);
   height: 200px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Circle = styled(motion.div)`
   background-color: #ffffff;
   height: 100px;
   width: 100px;
-
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
@@ -47,8 +50,13 @@ const overlay = {
 };
 
 const boxVariants = {
-  hover: { width: 350, height: 250 },
+  hover: { width: 550, height: 250 },
 };
+
+const Button = styled.button `
+ width:150px;
+ height:50px;
+`
 
 function App() {
   const [id, setId] = useState<null | string>(null);
@@ -96,7 +104,11 @@ function App() {
           </Overlay>
         ) : null}
       </AnimatePresence>
-      <button onClick={toggleClicked}>Switch</button>
+      <div className="buttonBox">      
+        <Button onClick={toggleClicked}>
+          Switch
+        </Button>
+      </div>
     </Wrapper>
   );
 }
